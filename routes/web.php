@@ -14,10 +14,11 @@ use App\Http\Controllers\ArticuloController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    $articulos = App\Models\Articulo::paginate(10); 
+    return view('welcome', compact('articulos'));
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
