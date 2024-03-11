@@ -15,7 +15,7 @@ use App\Http\Controllers\ArticuloController;
 |
 */
 Route::get('/', function () {
-    $articulos = App\Models\Articulo::paginate(10); 
+    $articulos = App\Models\Articulo::paginate(5); 
     return view('welcome', compact('articulos'));
 });
 
