@@ -30,7 +30,7 @@
         </div>
     @endif
     
-    {{-- Aquí comienza la sección de artículos con paginación --}}
+    {{-- Aquí comienza la sección de artículos con paginaciónn --}}
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 mt-6">
         @foreach ($articulos as $articulo)
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
