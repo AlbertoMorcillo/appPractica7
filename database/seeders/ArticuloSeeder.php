@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use Faker\Factory as Faker;
 
 class ArticuloSeeder extends Seeder
 {
@@ -13,11 +13,12 @@ class ArticuloSeeder extends Seeder
      */
     public function run()
     {
-        // Puedes ajustar la cantidad de artículos que deseas crear.
+        $faker = Faker::create();
+
         for ($i = 0; $i < 10; $i++) {
             DB::table('articulos')->insert([
-                'titulo' => Str::random(10),
-                'contenido' => Str::random(100),
+                'titulo' => $faker->sentence,
+                'contenido' => $faker->paragraphs(3, true),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
