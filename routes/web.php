@@ -32,5 +32,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::get('/articulos', [ArticuloController::class, 'index']);
-
+Route::post('/guardar-articulo', [DashboardController::class, 'store'])->name('guardar-articulo');
 require __DIR__.'/auth.php';
