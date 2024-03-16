@@ -15,11 +15,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $articulos = Articulo::paginate(5);
-
-        return view('dashboard', ['user' => $user, 'articulos' => $articulos]);
+        // Obtiene los artículos del usuario autenticado y los artículos generales.
+        $articulos = Articulo::where('user_id', auth()->id())
+                    ->orWhereNull('user_id')
+                    ->orderBy('created_at', 'desc') // Ordena los resultados por fecha de creación.
+                    ->paginate(5); // Pagina los resultados.
+    
+        return view('dashboard', ['user' => Auth::user(), 'articulos' => $articulos]);
     }
+    
+
 
     public function store(Request $request)
     {
@@ -31,10 +36,9 @@ class DashboardController extends Controller
         $articulo = new Articulo;
         $articulo->titulo = $request->articleTitle;
         $articulo->contenido = $request->articleDescription;
-        $articulo->user_id = auth()->id();
+        $articulo->user_id = Auth::id(); // Autenticar al usuario y obtener su ID
         $articulo->save();
 
-        return redirect('/dashboard')->with('status', 'Artículo guardado con éxito');
+        return redirect()->route('dashboard');
     }
-
 }
