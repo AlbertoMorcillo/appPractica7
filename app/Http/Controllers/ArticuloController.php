@@ -26,7 +26,7 @@ class ArticuloController extends Controller
         $articulo->user_id = auth()->id();
         $articulo->save();
 
-        return redirect()->route('dashboard')->with('success', 'Article added successfully.');
+        return redirect()->route('dashboard')->with('success', 'Articulo añadido correctamente.');
     }
 
     public function update(Request $request, Articulo $articulo)
@@ -40,14 +40,14 @@ class ArticuloController extends Controller
         $articulo->contenido = $request->description;
         $articulo->save();
 
-        return redirect()->route('dashboard')->with('success', 'Article updated successfully.');
+        return redirect()->route('dashboard')->with('success', 'Articulo actualizado correctamente.');
     }
 
     public function destroy(Articulo $articulo)
     {
         $articulo->delete();
 
-        return redirect()->route('dashboard')->with('success', 'Article deleted successfully.');
+        return redirect()->route('dashboard')->with('success', 'Articulo eliminado correctamente.');
     }
 }
 
