@@ -4,7 +4,7 @@
             {{ __('Artículos') }}
         </h2>
         <!-- Botón para abrir el modal de añadir artículo -->
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addArticleModal">
+        <button type="button" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;" data-toggle="modal" data-target="#addArticleModal">
             Añadir artículo
         </button>
     </x-slot>
@@ -27,7 +27,7 @@
                 <form action="{{ route('articulos.destroy', $articulo->id) }}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">
+                    <button type="submit" class="btn btn-danger" style="background-color: #dc3545; color: white; border-color: #dc3545;">
                         Eliminar
                     </button>
                 </form>
