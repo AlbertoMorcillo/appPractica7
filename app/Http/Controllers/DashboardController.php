@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; // Namespace
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Articulo; // Asegúrate de agregar esta línea
+use Illuminate\Http\Request; // Importamos Request.
+use Illuminate\Support\Facades\Auth; // Importamos Auth.
+use App\Models\Articulo; // Importamos el modelo Articulo.
 
-class DashboardController extends Controller
+class DashboardController extends Controller //class DashboardController extiende de Controller. Por lo tanto, hereda todos los metodos de Controller.
 {
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Contracts\Support\Renderable // Devuelve una vista.
      */
     public function index()
     {

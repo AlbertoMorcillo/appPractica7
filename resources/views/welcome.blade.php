@@ -23,16 +23,16 @@
         <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     </head>
-    <body class="antialiased">
+    <body class="antialiased"> 
     <div class="container mt-4">
-            @if (Route::has('login'))
+            @if (Route::has('login')) <!-- Verifica si existe una ruta llamada login -->
                 <div class="d-flex justify-content-end">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="btn btn-primary">Dashboard</a>
+                    @auth <!-- Verifica si el usuario está autenticado -->
+                        <a href="{{ url('/dashboard') }}" class="btn btn-primary">Dashboard</a> <!-- Redirecciona a la ruta dashboard si el usuario esta autenticado -->
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-primary">Log in</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-secondary ml-2">Register</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Log in</a> <!-- Redirecciona a la ruta login -->
+                        @if (Route::has('register')) <!-- Verifica si existe una ruta llamada register -->
+                            <a href="{{ route('register') }}" class="btn btn-secondary ml-2">Register</a> <!-- Redirecciona a la ruta register -->
                         @endif
                     @endauth
                 </div>
@@ -40,18 +40,18 @@
             
             <!-- Sección de artículos con paginación -->
             <div class="mt-4">
-                @foreach ($articulos as $articulo)
+                @foreach ($articulos as $articulo) <!-- Recorre los artículos -->
                     <div class="card mb-3">
                         <div class="card-body">
                             <!-- Numeración consecutiva de artículos -->
-                            <h5 class="card-title">{{ $articulos->firstItem() + $loop->index }}. {{ $articulo->titulo }}</h5>
-                            <p class="card-text">{{ $articulo->contenido }}</p>
+                            <h5 class="card-title">{{ $articulos->firstItem() + $loop->index }}. {{ $articulo->titulo }}</h5> <!-- Muestra el número de artículo y el título -->
+                            <p class="card-text">{{ $articulo->contenido }}</p> <!-- Muestra el contenido del artículo -->
                         </div>
                     </div>
                 @endforeach
                 <!-- Paginación -->
                 <div class="d-flex justify-content-center">
-                    {{ $articulos->links() }}
+                    {{ $articulos->links() }} <!-- Genera los enlaces de paginación -->
                 </div>
             </div>
         </div>
