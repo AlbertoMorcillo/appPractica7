@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(ArticuloSeeder::class);
+        $this->call(ArticuloSeeder::class); //Llama al seeder ArticuloSeeder. Es decir, ejecuta el seeder ArticuloSeeder. 
 
     }
 }

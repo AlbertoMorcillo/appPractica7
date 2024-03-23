@@ -42,20 +42,20 @@ class ProfileController extends Controller //Define la clase ProfileController q
      */
     public function destroy(Request $request): RedirectResponse //Define el método destroy que recibe un objeto Request y devuelve un objeto RedirectResponse
     {
-        $request->validateWithBag('userDeletion', [
+        $request->validateWithBag('userDeletion', [ //Valida los datos del request
             'password' => ['required', 'current_password'], 
         ]);
 
-        $user = $request->user();
+        $user = $request->user(); //Obtiene el usuario autenticado
 
-        Auth::logout();
+        Auth::logout(); //Cierra la sesión del usuario
 
-        $user->delete();
+        $user->delete(); //Elimina el usuario de la base de datos
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        $request->session()->invalidate(); //Invalida la sesión. Es decir, elimina todos los datos de la sesión.
+        $request->session()->regenerateToken(); //Regenera el token de la sesión. Es decir, genera un nuevo token de sesión.
 
-        return Redirect::to('/');
+        return Redirect::to('/'); //Redirige a la página principal. A la de inicio.
     }
 }
 
