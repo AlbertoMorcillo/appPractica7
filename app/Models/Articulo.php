@@ -1,24 +1,23 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model; 
 
 class Articulo extends Model
 {
-    use HasFactory;
+    use HasFactory; 
 
-    protected $fillable = [
+    protected $fillable = [ //Define los atributos que son asignables en masa.
         'titulo',
         'contenido',
         'user_id', 
     ];
 
-    public function user()
+    public function user() 
     {
      
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class); //Un artículo pertenece a un usuario.
     }
 
     

@@ -3,21 +3,21 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory; //Importa la clase HasFactory. Esta clase se utiliza para la factoría de modelos.
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;  //Importa la clase Notifiable. Esta clase se utiliza para las notificaciones.
+use Laravel\Sanctum\HasApiTokens; //Importa la clase HasApiTokens. Esta clase se utiliza para los tokens de API.
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable; //Utiliza los traits HasApiTokens, HasFactory y Notifiable.
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected $fillable = [ //Define los atributos que son asignables en masa.
         'name',
         'email',
         'password',
@@ -45,6 +45,6 @@ class User extends Authenticatable
 
     public function articulos()
 {
-    return $this->hasMany('App\Models\Articulo');
+    return $this->hasMany('App\Models\Articulo'); //Un usuario puede tener muchos artículos. 
 }
 }
