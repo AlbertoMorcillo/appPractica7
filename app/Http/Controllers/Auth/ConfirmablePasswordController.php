@@ -17,7 +17,7 @@ class ConfirmablePasswordController extends Controller
      */
     public function show(): View
     {
-        return view('auth.confirm-password');
+        return view('auth.confirm-password'); //Devuelve la vista auth.confirm-password. Es decir, la vista de confirmación de contraseña.
     }
 
     /**
@@ -25,7 +25,7 @@ class ConfirmablePasswordController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        if (! Auth::guard('web')->validate([
+        if (! Auth::guard('web')->validate([ //Comprueba si las credenciales del usuario son válidas.
             'email' => $request->user()->email,
             'password' => $request->password,
         ])) {
@@ -34,7 +34,7 @@ class ConfirmablePasswordController extends Controller
             ]);
         }
 
-        $request->session()->put('auth.password_confirmed_at', time());
+        $request->session()->put('auth.password_confirmed_at', time()); //Guarda la confirmación de la contraseña en la sesión.
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
