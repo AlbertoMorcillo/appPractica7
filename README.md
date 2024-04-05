@@ -7,60 +7,50 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Proyecto de Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Mi primer proyecto de Laravel donde se puede insertar y mostrar diferentes articulos. Puedes registrarte y loguearte para poder insertar articulos. Si quieres ya un usuario creado puedes usar el siguiente:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Usuario: a.morcillo@sapalomera.cat
+Contraseña: P@ssw0rd
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Cosas en tener en cuenta
 
-## Learning Laravel
+El perfil puede que no se vea de primera mano pero esta arriba a la derecha como puedes ver en la imagen marcado en amarillo:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![Imagen donde se ve el botón del perfil](image-1.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+La paginación le pasa lo mismo que en el perfil, que se ve poco:
+![Marcada donde esta la paginación](image-2.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Base de datos
+Ya esta la estructura creada en los archivos de migración. Hay datos ya creados usando el seeder. Para poder crear la base de datos y los datos necesitas ejecutar los siguientes comandos:
 
-## Laravel Sponsors
+```bash 
+php artisan migrate
+php artisan db:seed
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+## Requesitos
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Para que este proyecto funcione correctamente, necesitarás tener instalado:
 
-## Contributing
+- Laravel
+- Vite para el desarrollo y la construcción de la aplicación.
+- Dependencias de desarrollo como @tailwindcss/forms, alpinejs, autoprefixer, axios,  laravel-vite-plugin, postcss, tailwindcss, y vite.
+- Dependencias como bootstrap.
+  
+## Versiones
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Vite: ^5.0.0
+@tailwindcss/forms: ^0.5.2
+alpinejs: ^3.4.2
+autoprefixer: ^10.4.2
+axios: ^1.6.4
+laravel-vite-plugin: ^1.0.0
+postcss: ^8.4.31
+tailwindcss: ^3.1.0
+bootstrap: ^5.3.3
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
